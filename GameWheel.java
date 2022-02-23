@@ -28,16 +28,39 @@ public class GameWheel
     //Implement the scramble method here
 
     ArrayList<Slice> tempFives = new ArrayList<Slice>() ; // put multiples of 5 in here
-    ArrayList<Slice> tempOdds = new ArrayList<Slice>() ; // put odds in here
-    ArrayList<Slice> tempEvens = new ArrayList<Slice>() ; // put evens in here
-    
-    for(int i = 0, i < slices.size(); i + 5)
+
+    for(int i = 0 ; i < slices.size(); i = i + 5)
       {
         tempFives.add(slices.get(i));
       }
 
-    System.out.println(tempFives);
+    // now that the 0 , 5, 10, 15 are in there, scramble them
     
+    ArrayList<Slice> tempOdds = new ArrayList<Slice>() ; // put odds in here
+
+    for(int i = 1 ; i <= slices.size(); i = i + 2)
+      {
+        tempOdds.add(slices.get(i));
+      }
+
+    tempOdds.remove(2);
+    tempOdds.remove(6);
+
+    // now that the odds (not including multiples of 5) are in there, scramble them
+
+    
+    ArrayList<Slice> tempEvens = new ArrayList<Slice>() ; // put evens in here
+    
+    for(int i = 2 ; i < slices.size(); i = i + 2)
+      {
+        tempEvens.add(slices.get(i));
+      }
+
+    tempEvens.remove(4); 
+
+    // now that the evens (not including multiples of 5) are in there, scramble them
+
+
   }
 
 
