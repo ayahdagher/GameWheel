@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.lang.Math.*;
+
 
 public class GameWheel
 {
@@ -34,7 +36,19 @@ public class GameWheel
         tempFives.add(slices.get(i));
       }
 
+    System.out.println(tempFives);
+    
     // now that the 0 , 5, 10, 15 are in there, scramble them
+
+    ArrayList<Slice> tempFives2 = new ArrayList<Slice>(4) ; // put multiples of 5 in here
+
+    for(int i = 0 ; i < tempFives2.size() ; i ++)
+     {
+        tempFives2.add(tempFives.remove((int)(Math.random() * ((tempFives.size()) + 1)))); 
+        //tempFives.trimToSize();
+    }
+
+    System.out.println(tempFives2);
     
     ArrayList<Slice> tempOdds = new ArrayList<Slice>() ; // put odds in here
 
