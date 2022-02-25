@@ -66,7 +66,7 @@ public class GameWheel
       }
 
     tempEvens.remove(4); 
-
+/*
     ArrayList<Slice> rand1 = new ArrayList<Slice>() ; // put evens in here
     rand1.add(tempFives.get(0));
     rand1.add(tempOdds.get(0));
@@ -183,7 +183,8 @@ public class GameWheel
     rand5.add(tempFives.get(3));
     
     }
-  
+  */
+    
   /* Sorts the positions of the slices that are in the wheel by prize amount,
    * but without changing the pattern of the colors.
    */
