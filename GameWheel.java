@@ -35,26 +35,13 @@ public class GameWheel
       {
         tempFives.add(slices.get(i));
       }
-    
-    // now that the 0 , 5, 10, 15 are in there, scramble them
 
-  /*  ArrayList<Slice> tempFives2 = new ArrayList<Slice>(4) ; // put multiples of 5 in here
-
-    for(int i = 0 ; i < tempFives2.size() ; i ++)
-     {
-        tempFives2.add(tempFives.remove((int)(Math.random() * ((tempFives.size()) + 1)))); 
-        //tempFives.trimToSize();
-    }
-
-    System.out.println(tempFives2); */
-    
     ArrayList<Slice> tempOdds = new ArrayList<Slice>() ; // put odds in here
   
     for(int i = 1 ; i <= slices.size(); i = i + 2)
       {
         tempOdds.add(slices.get(i));
       }
-
     tempOdds.remove(2);
     tempOdds.remove(6);
 
@@ -64,132 +51,88 @@ public class GameWheel
       {
         tempEvens.add(slices.get(i));
       }
-
     tempEvens.remove(4); 
-/*
-    ArrayList<Slice> rand1 = new ArrayList<Slice>() ; // put evens in here
-    rand1.add(tempFives.get(0));
-    rand1.add(tempOdds.get(0));
-    rand1.add(tempEvens.get(0));
-    rand1.add(tempFives.get(1));
-    rand1.add(tempOdds.get(1));
-    rand1.add(tempEvens.get(1));
-    rand1.add(tempFives.get(2));
-    rand1.add(tempOdds.get(2));
-    rand1.add(tempEvens.get(2));
-    rand1.add(tempFives.get(3));
-    rand1.add(tempOdds.get(3));
-    rand1.add(tempEvens.get(3));
-    rand1.add(tempOdds.get(4));
-    rand1.add(tempEvens.get(4));
-    rand1.add(tempOdds.get(5));
-    rand1.add(tempEvens.get(5));
-    rand1.add(tempOdds.get(6));
-    rand1.add(tempEvens.get(6));
-    rand1.add(tempOdds.get(7));
-    rand1.add(tempEvens.get(7));
-    
-    ArrayList<Slice> rand2 = new ArrayList<Slice>() ; // put evens in here
 
-    rand2.add(tempOdds.get(7));
-    rand2.add(tempEvens.get(7));
-    rand2.add(tempOdds.get(6));
-    rand2.add(tempEvens.get(6));
-    rand2.add(tempOdds.get(5));
-    rand2.add(tempEvens.get(5));
-    rand2.add(tempOdds.get(4));
-    rand2.add(tempEvens.get(4));
-    rand2.add(tempFives.get(3));
-    rand2.add(tempOdds.get(3));
-    rand2.add(tempEvens.get(3));
-    rand2.add(tempFives.get(2));
-    rand2.add(tempOdds.get(2));
-    rand2.add(tempEvens.get(2));
-    rand2.add(tempFives.get(1));
-    rand2.add(tempOdds.get(1));
-    rand2.add(tempEvens.get(1));
-    rand2.add(tempFives.get(0));
-    rand2.add(tempOdds.get(0));
-    rand2.add(tempEvens.get(0));
-    
-    ArrayList<Slice> rand3 = new ArrayList<Slice>() ; // put evens in here
+    System.out.println(slices);
+   // slices.clear();
+    System.out.println(slices);
 
-    rand3.add(tempOdds.get(7));
-    rand3.add(tempEvens.get(7));
-    rand3.add(tempOdds.get(5));
-    rand3.add(tempEvens.get(5));
-    rand3.add(tempOdds.get(6));
-    rand3.add(tempEvens.get(6));
-    rand3.add(tempFives.get(3));
-    rand3.add(tempOdds.get(3));
-    rand3.add(tempEvens.get(3));
-    rand3.add(tempOdds.get(4));
-    rand3.add(tempEvens.get(4));
-    rand3.add(tempFives.get(1));
-    rand3.add(tempOdds.get(1));
-    rand3.add(tempEvens.get(1));
-    rand3.add(tempFives.get(0));
-    rand3.add(tempOdds.get(0));
-    rand3.add(tempEvens.get(0));
-    rand3.add(tempFives.get(2));
-    rand3.add(tempOdds.get(2));
-    rand3.add(tempEvens.get(2));
+   slices.add(tempFives.remove((int)(Math.random() * ((tempFives.size()-1)) + 1)));  
+    // this is the code that has been giving me trouble. there's only one line of it since i'm trying to figure it out and then use it in a algorithm. also, i'm not sure how i could randomly choose from which of the 3 arrays to pick out of, to put back in the main one. i had an idea to hard code the pattern of the colors of slices, but the value of the slice itself would be randomly selected. so i decided to try that and made this code but it didn't work.
 
-    ArrayList<Slice> rand4 = new ArrayList<Slice>() ; // put evens in here
+    System.out.println(slices);
 
-    rand4.add(tempOdds.get(7));
-    rand4.add(tempOdds.get(5));
-    rand4.add(tempEvens.get(2));
-    rand4.add(tempEvens.get(7));
-    rand4.add(tempEvens.get(5));
-    rand4.add(tempOdds.get(6));
-    rand4.add(tempFives.get(3));
-    rand4.add(tempEvens.get(6));
-    rand4.add(tempOdds.get(3));
-    rand4.add(tempOdds.get(4));
-    rand4.add(tempFives.get(0));
-    rand4.add(tempOdds.get(1));
-    rand4.add(tempEvens.get(3));
-    rand4.add(tempEvens.get(4));
-    rand4.add(tempOdds.get(2));
-    rand4.add(tempFives.get(1));
-    rand4.add(tempEvens.get(0));
-    rand4.add(tempEvens.get(1));
-    rand4.add(tempOdds.get(0));
-    rand4.add(tempFives.get(2));
-
-    
-    ArrayList<Slice> rand5 = new ArrayList<Slice>() ; // put evens in here
-
-    rand5.add(tempOdds.get(2));
-    rand5.add(tempEvens.get(0));
-    rand5.add(tempOdds.get(7));
-    rand5.add(tempFives.get(1));
-    rand5.add(tempOdds.get(1));
-    rand5.add(tempEvens.get(1));
-    rand5.add(tempEvens.get(2));
-    rand5.add(tempOdds.get(3));
-    rand5.add(tempEvens.get(4));
-    rand5.add(tempFives.get(0));
-    rand5.add(tempEvens.get(7));
-    rand5.add(tempOdds.get(5));
-    rand5.add(tempEvens.get(3));
-    rand5.add(tempOdds.get(4));
-    rand5.add(tempEvens.get(5));
-    rand5.add(tempOdds.get(6));
-    rand5.add(tempEvens.get(6));
-    rand5.add(tempOdds.get(0));
-    rand5.add(tempFives.get(2));
-    rand5.add(tempFives.get(3));
-    
     }
-  */
-    
+  
+  // Min + (int)(Math.random() * ((Max - Min) + 1))
+  
   /* Sorts the positions of the slices that are in the wheel by prize amount,
    * but without changing the pattern of the colors.
    */
   public void sort(){
     //Implement the sort method here
+
+  // here, i reset all the values of the 20 slices back into their original order
+    
+  Slice black1 = new Slice("black", 0); 
+  slices.set(0, black1);
+
+  Slice red1 = new Slice("red", 100); 
+  slices.set(1, red1);
+
+  Slice blue1 = new Slice("blue", 400); 
+  slices.set(2, blue1);
+
+  Slice red2 = new Slice("red", 300); 
+  slices.set(3, red2);
+  
+  Slice blue2 = new Slice("blue", 800); 
+  slices.set(4, blue2);
+
+  Slice black2 = new Slice("black", 5000); 
+  slices.set(5, black2);
+
+  Slice blue3 = new Slice("blue", 1200); 
+  slices.set(6, blue3);
+
+  Slice red3 = new Slice("red", 700); 
+  slices.set(7, red3);
+
+  Slice blue4 = new Slice("blue", 1600); 
+  slices.set(8, blue4);
+
+  Slice red4 = new Slice("red", 900); 
+  slices.set(9, red4);
+
+  Slice black3 = new Slice("black", 10000); 
+  slices.set(10, black3);
+
+  Slice red5 = new Slice("red", 1100); 
+  slices.set(11, red5);
+
+  Slice blue5 = new Slice("blue", 2400); 
+  slices.set(12, blue5);
+
+  Slice red6 = new Slice("red", 1300); 
+  slices.set(13, red6);
+
+  Slice blue6 = new Slice("blue", 2800); 
+  slices.set(14, blue6);
+
+  Slice black4 = new Slice("black", 15000); 
+  slices.set(15, black4);
+
+  Slice blue7 = new Slice("blue", 3200); 
+  slices.set(16, blue7);
+
+  Slice red7 = new Slice("red", 1700);
+  slices.set(17, red7);
+
+  Slice blue8 = new Slice("blue", 3600); 
+  slices.set(18, blue8);
+
+  Slice red8 = new Slice("red", 1900);
+  slices.set(19, red8);
   }
 
   /* COMPLETED METHODS - YOU DO NOT NEED TO CHANGE THESE */
